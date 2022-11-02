@@ -1,14 +1,17 @@
 .data
 
-krabby: .word 1 2 3 4 5 6 7 8 9 10
+krabby: .word 12, 13, 2, 17, 17, 17, 2, 8, 16, 15
 
 carray: .word 0:10
 
 marray: .word 0:10
 
-comma:      .asciiz ", "
+comma: .asciiz ", "
 
-newline:    .asciiz "\n"
+newline: .asciiz "\n"
+
+encrypt: .asciiz "Encrypted: "
+decrypt: .asciiz "Decrypted: "
 
 .text
 main:
@@ -53,11 +56,19 @@ call:
     j call
 
 print:
+    la $a0 encrypt
+    li $v0 4
+    syscall 
+
     la $a0 carray
     jal printArray
     
     li $v0, 4
     la $a0, newline
+    syscall
+
+    la $a0 decrypt
+    li $v0 4
     syscall
 
     la $a0 marray
