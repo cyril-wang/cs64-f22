@@ -1,8 +1,7 @@
 .data
 #DO NOT CHANGE
 buffer: .word 0:100
-# array: .word 9 1 2 1 17 19 10 9 11 10
-array: .word 1 20 20 20 20 20 20 20 20 20
+array: .word 9 1 2 1 17 19 10 9 11 10
 newline: .asciiz "\n"
 comma: .asciiz ", "
 convention: .asciiz "Convention Check\n"
